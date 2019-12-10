@@ -25,4 +25,22 @@ Park.prototype.mostPopular = function() {
   return result;
 };
 
+Park.prototype.findSpecies = function(speciesToFind) {
+  const result = [];
+  for (const dinosaur of this.collection) {
+    if (dinosaur.species === speciesToFind) {
+      result.push(dinosaur);
+    }
+  }
+  return result;
+}
+
+Park.prototype.visitorDailyTotal = function() {
+  let total = 0;
+  for (const dinosaur of this.collection) {
+    total += dinosaur.guestsAttractedPerDay;
+  }
+  return total;
+}
+
 module.exports = Park;
