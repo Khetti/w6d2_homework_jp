@@ -15,5 +15,14 @@ Park.prototype.removeDinosaur = function() {
   this.collection.pop();
 };
 
+Park.prototype.mostPopular = function() {
+  let result = 0;
+  for (const dinosaur of this.collection) {
+    if (dinosaur.guestsAttractedPerDay > result) {
+      result = dinosaur.guestsAttractedPerDay;
+    }
+  }
+  return result;
+};
 
 module.exports = Park;
